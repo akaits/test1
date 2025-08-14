@@ -8723,6 +8723,73 @@ error: remote test1 already exists.
 (.venv) apple@appurunoMacBook-Air pygame % git remote add test1 https://gi     
 error: remote test1 already exists.
 (.venv) apple@appurunoMacBook-Air pygame % vi test1.py 
+(.venv) apple@appurunoMacBook-Air pygame % git clone https://github.com/akaits/test1.git
+Cloning into 'test1'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (6/6), 62.16 KiB | 2.30 MiB/s, done.
+(.venv) apple@appurunoMacBook-Air pygame % ls
+test1		test1.py	test2.py
+(.venv) apple@appurunoMacBook-Air pygame % cd test1
+(.venv) apple@appurunoMacBook-Air test1 % ls
+blob_Test.py	test1
+(.venv) apple@appurunoMacBook-Air test1 % cd ../                               
+(.venv) apple@appurunoMacBook-Air pygame % git clone https://github.com/akaits/test1.git
+fatal: destination path 'test1' already exists and is not an empty directory.
+(.venv) apple@appurunoMacBook-Air pygame % ls
+test1		test1.py	test2.py
+(.venv) apple@appurunoMacBook-Air pygame % \rm -r test1
+override r--r--r-- apple/staff for test1/.git/objects/pack/pack-7c51c7f572a4a1d74de77d4a68b02be853cc1186.rev? y
+override r--r--r-- apple/staff for test1/.git/objects/pack/pack-7c51c7f572a4a1d74de77d4a68b02be853cc1186.pack? y
+override r--r--r-- apple/staff for test1/.git/objects/pack/pack-7c51c7f572a4a1d74de77d4a68b02be853cc1186.idx? y
+(.venv) apple@appurunoMacBook-Air pygame % y
+zsh: command not found: y
+(.venv) apple@appurunoMacBook-Air pygame % ls
+test1.py	test2.py
+(.venv) apple@appurunoMacBook-Air pygame % git clone https://github.com/akaits/test1.git
+Cloning into 'test1'...
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 8 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (8/8), 63.04 KiB | 6.30 MiB/s, done.
+(.venv) apple@appurunoMacBook-Air pygame % cd test1.py
+cd: not a directory: test1.py
+(.venv) apple@appurunoMacBook-Air pygame % vi test1.py
+(.venv) apple@appurunoMacBook-Air pygame % git add test1.py
+(.venv) apple@appurunoMacBook-Air pygame % git status          
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   test1.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	test1/
+	test2.py
+
+(.venv) apple@appurunoMacBook-Air pygame % git commit -m "a"
+[master 7646a1e] a
+ Committer: hirost <apple@appurunoMacBook-Air.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 3 insertions(+)
+(.venv) apple@appurunoMacBook-Air pygame % git remote add origin  https://github.com/akaits/test1.git
+error: remote origin already exists.
+(.venv) apple@appurunoMacBook-Air pygame % git remote add master  https://github.com/akaits/test1.git
+(.venv) apple@appurunoMacBook-Air pygame % vi test1.py
+(.venv) apple@appurunoMacBook-Air pygame % vi test1.py
 
 import sys
 import pygame
@@ -8752,7 +8819,19 @@ def main():
         SURFACE.blit(count_image,(50,50))
         pygame.display.update()
         FPSCLOCK.tick(10)
+        print("a")
+
 
 if __name__=="__main__":
-    main()                                                 
-"test1.py" 33L, 702B                                          28,8         全て
+    main()
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+"test1.py" 33L, 720B                                          25,43        全て
