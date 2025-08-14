@@ -26,5 +26,8 @@ def main():
         SURFACE.blit(count_image,(50,50))
         pygame.display.update()
         FPSCLOCK.tick(10)
+        print("a")
+
+
 if __name__=="__main__":
     main()
