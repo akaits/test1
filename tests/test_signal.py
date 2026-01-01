@@ -1,6 +1,14 @@
 import pytest
+import importlib.util
+import pathlib
 
-import signal as signal_mod
+# Load the local `signal.py` from the repository root to avoid stdlib conflicts
+spec = importlib.util.spec_from_file_location(
+    "signal_mod",
+    str(pathlib.Path(__file__).resolve().parent.parent / "signal.py"),
+)
+signal_mod = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(signal_mod)
 
 
 def test_setup_prints(capsys):
